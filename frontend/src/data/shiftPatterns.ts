@@ -1,7 +1,14 @@
+import { ShiftPattern } from "../types/shiftPattern";
 import { ShiftType } from "../types/shift";
 
-export const shiftPatterns = {
-  A: [
+/**
+ * Define los tres patrones de trabajo.
+ *
+ * Cada patrón contiene los siete días de la semana,
+ * comenzando siempre por el lunes.
+ */
+export const shiftPatterns: Record<ShiftPattern, ShiftType[]> = {
+  [ShiftPattern.A]: [
     ShiftType.Rest,
     ShiftType.Meeting,
     ShiftType.Rest,
@@ -11,7 +18,7 @@ export const shiftPatterns = {
     ShiftType.Night,
   ],
 
-  B: [
+  [ShiftPattern.B]: [
     ShiftType.Rest,
     ShiftType.MeetingNight,
     ShiftType.Night,
@@ -21,7 +28,7 @@ export const shiftPatterns = {
     ShiftType.Rest,
   ],
 
-  C: [
+  [ShiftPattern.C]: [
     ShiftType.Night,
     ShiftType.Meeting,
     ShiftType.Rest,
